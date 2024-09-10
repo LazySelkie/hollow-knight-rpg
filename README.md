@@ -1,6 +1,6 @@
 # Hollow Knight RPG
 
-An attempt to write a simple game system for Foundry VTT which allows for playing Hollow Knight RPG.
+An attempt to write a simple game system for Foundry VTT which allows for playing Hollow Knight RPG. Was written for Foundry VTT v10.
 
 This is a 3rd party, unofficial fan project.
 
