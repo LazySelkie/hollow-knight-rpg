@@ -1,0 +1,216 @@
+{
+"Actor": {
+  "types": ["character"],
+  "htmlFields": ["biography", "description", "notes"],
+  "character": {
+    "player": "",
+    "description": "",
+    "biography": "",
+    "notes": "",
+
+    "size": {
+      "value": "",
+      "label": "Size"
+    },
+    "sizes": {
+      "small": {
+        "label": "Small",
+        "key": "small",
+        "dtype": "String"
+      },
+      "medium": {
+        "label": "Medium",
+        "key": "medium",
+        "dtype": "String"
+      },
+      "big": {
+        "label": "Big",
+        "key": "big",
+        "dtype": "String"
+      }
+    },
+    "attributes": {
+      "might": {
+        "value": 1,
+        "modifier": []
+      },
+      "insight": {
+        "value": 1,
+        "modifier": []
+      },
+      "shell": {
+        "value": 1,
+        "modifier": []
+      },
+      "grace": {
+        "value": 1,
+        "modifier": []
+      }
+    },
+    "pools": {
+      "heart": {
+        "value": 7,
+        "min": 0,
+        "max": 7,
+        "temp": 0
+      },
+      "soul": {
+        "value": 7,
+        "min": 0,
+        "max": 7,
+        "temp": 0
+      },
+      "stamina": {
+        "value": 7,
+        "min": 0,
+        "max": 7,
+        "temp": 0
+      }
+    },
+
+    "appearence": {
+      "cute": {
+        "value": 0,
+        "modifier": ""
+      },
+      "spook": {
+        "value": 0,
+        "modifier": ""
+      }
+    },
+
+    "movement": {
+      "speed": {
+        "value": 10,
+        "min": 0,
+        "max": 10
+      },
+      "footwork": {
+        "value": 0,
+        "modifier": []
+      }
+    },
+
+    "belly": {
+      "value": 10,
+      "min": -100,
+      "max": 10
+    },
+
+    "charm_info": {
+      "notches": {
+        "max": 5,
+        "equipped": 0
+      },
+      "attuned": []
+    },
+    "milestone": {
+      "value": 1
+    },
+
+    "proficiencies": {"0": {
+      "name": "",
+      "rank": 0,
+      "skills": {
+        "0": {
+          "name": "",
+          "mastery": false,
+          "description": ""
+        },
+        "1": {
+          "name": "",
+          "mastery": false,
+          "description": ""
+        },
+        "2": {
+          "name": "",
+          "mastery": false,
+          "description": ""
+        },
+        "3": {
+          "name": "",
+          "mastery": false,
+          "description": ""
+        }}
+    },
+    "1": {
+      "name": "",
+      "rank": 0,
+      "skills": {
+        "0": {
+        "name": "",
+        "mastery": false,
+        "description": ""
+        },
+        "1": {
+          "name": "",
+          "mastery": false,
+          "description": ""
+        },
+        "2": {
+          "name": "",
+          "mastery": false,
+          "description": ""
+        },
+        "3": {
+          "name": "",
+          "mastery": false,
+          "description": ""
+        }}
+    }}
+  }
+},
+
+
+
+"Item": {
+  "types": ["item", "path", "trait", "charm", "equipment", "technique", "weapon-shield", "armor"],
+  "htmlFields": ["description"],
+  "templates": {
+    "base": {
+      "description": ""
+    }
+  },
+  "item": {
+    "description": "",
+    "quantity": 1,
+    "weight": 0
+  },
+  "path": {
+    "templates": ["base"],
+    "htmlFields": ["rank1_description", "rank2_description", "rank3_description"],
+    "name": "",
+    "rank": 1,
+    "rank1_name": "",
+    "rank1_description": "",
+    "rank2_name": "",
+    "rank2_description": "",
+    "rank3_name": "",
+    "rank3_description": ""
+  },
+  "trait": {
+    "templates": ["base"],
+    "cuteMod": 0,
+    "spookMod": 0,
+    "hunger": 0
+  },
+  "charm": {
+    "templates": ["base"],
+    "notches": 1
+  },
+  "equipment": {
+    "templates": ["base"],
+    "bulk": 0,
+    "isLight": true
+  },
+  "technique": {
+    "templates": ["base"]
+  },
+  "weapon-shield": {
+    "templates": ["base", "equipment"]
+  },
+  "armor": {
+    "templates": ["base", "equipment"]
+  }
+}
+}

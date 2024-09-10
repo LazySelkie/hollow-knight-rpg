@@ -1,0 +1,85 @@
+{
+  "settings": {
+    "allow0ArcanaForAll": {
+        "name": "Allow all bugs to learn 0 Difficulty Arcana",
+        "hint": "Disable this setting to restrict learning Arcana to only bugs who possess Mystic Ranks."
+    },
+    "countLightWeight": {
+        "name": "Count Light objects' weight",
+        "hint": "If enabled, Light object counts as having 1/3 Bulk."
+    }
+  },
+
+  "HK": {
+    "milestone": "Milestone",
+    "size": "Size",
+    "sizes": {
+      "small": "Small",
+      "medium": "Medium",
+      "big": "Big"
+    },
+
+    "might": "Might",
+    "insight": "Insight",
+    "shell": "Shell",
+    "grace": "Grace",
+
+    "heart": "Heart",
+    "soul": "Soul",
+    "stamina": "Stamina",
+
+    "cute": "Cute",
+    "spook": "Spook",
+
+    "speed": "Speed",
+    "footwork": "Footwork",
+
+    "hunger": "Hunger",
+    "belly": "Belly",
+
+    "proficiencies": "Proficiencies",
+    "skills": "Skills",
+    "skill": "Skill",
+    "rank": "rank",
+
+    "ItemCreate": "Create Item",
+    "ItemEdit": "Edit Item",
+    "ItemDelete": "Delete Item",
+    "ItemNew": "New Item",
+
+    "tabs": {
+      "main": "Main",
+      "inventory": "Inventory",
+      "abilities": "Abilities",
+      "journal": "Journal"
+    }
+  },
+
+  "SIMPLE.NotifyInitFormulaUpdated": "Initiative formula was updated to",
+  "SIMPLE.NotifyInitFormulaInvalid": "Initiative formula was invalid",
+  "SIMPLE.NotifyGroupDuplicate": "Attribute group already exists.",
+  "SIMPLE.NotifyGroupAttrDuplicate": "Attribute group already exists as an attribute.",
+  "SIMPLE.NotifyGroupAlphanumeric": "Attribute group names may not contain spaces or periods.",
+  "SIMPLE.NotifyGroupReserved": "Attribute group \"{key}\" is reserved and cannot be used.",
+  "SIMPLE.NotifyAttrDuplicate": "Attribute key already exists as a group.",
+  "SIMPLE.NotifyAttrInvalid": "Attribute keys may not contain spaces or periods.",
+
+  "SIMPLE.ResourceMin": "Min",
+  "SIMPLE.ResourceValue": "Value",
+  "SIMPLE.ResourceMax": "Max",
+
+  "SIMPLE.DefineTemplate": "Define as Template",
+  "SIMPLE.UnsetTemplate": "Unset Template",
+  "SIMPLE.NoTemplate": "No Template",
+
+  "SIMPLE.AttributeKey": "Attribute Key",
+  "SIMPLE.AttributeValue": "Value",
+  "SIMPLE.AttributeLabel": "Label",
+  "SIMPLE.AttributeDtype": "Data Type",
+
+  "SIMPLE.DeleteGroup": "Delete group?",
+  "SIMPLE.DeleteGroupContent": "Do you wish to delete this group? This will delete the following group and all attributes included in it: ",
+
+  "SIMPLE.Create": "Create",
+  "SIMPLE.New": "New"
+}

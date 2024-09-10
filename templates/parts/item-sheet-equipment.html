@@ -1,0 +1,21 @@
+<section class="item-sheet equipment">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+            </h1>
+            <div class="horizontal-row">
+                <div class="flexcol my10 align-center">
+                    <label class="attribute-label">Bulk</label>
+                    <input type="text" name="system.bulk" value="{{systemData.bulk}}" data-dtype="Number"/>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- <div class="divider"></div> -->
+    <section class="sheet-body main">
+        <h3>Description</h3>
+        {{editor descriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
+    </section>
+</section>

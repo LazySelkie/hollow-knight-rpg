@@ -1,0 +1,374 @@
+.hollow-knight-rpg {
+  /* Sheet Tabs */
+  /* Items List */
+  /* Attributes */
+  font-family: "Constantine";
+}
+.actor .sheet nav.sheet-tabs .item {
+  padding: 0px 12px;
+}
+.hollow-knight-rpg .window-content {
+  height: 100%;
+  padding: 5px;
+  overflow-y: hidden;
+}
+.hollow-knight-rpg form {
+  height: 100%;
+}
+.hollow-knight-rpg .sheet-header {
+  flex: 0 0 100px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.hollow-knight-rpg .sheet-header .profile-img {
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+.hollow-knight-rpg .sheet-header .header-fields {
+  flex: 1;
+  height: 100px;
+}
+.hollow-knight-rpg .sheet-header .header-fields .header-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.hollow-knight-rpg .sheet-header .header-fields .header-top .attribute-label {
+  font-weight: bold;
+}
+.hollow-knight-rpg .sheet-header h1.charname {
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
+  min-width: 100px;
+}
+.hollow-knight-rpg .sheet-header h1.charname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.hollow-knight-rpg .resource {
+  width: 33%;
+  height: 40px;
+  float: left;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.hollow-knight-rpg .resource input {
+  width: 40px;
+  height: 28px;
+}
+.hollow-knight-rpg .tabs {
+  flex: 0 0 40px;
+  border-top: 1px solid #AAA;
+  border-bottom: 1px solid #AAA;
+}
+.hollow-knight-rpg .tabs .item {
+  line-height: 40px;
+  font-weight: bold;
+}
+.hollow-knight-rpg .tabs .item.active {
+  text-decoration: underline;
+  text-shadow: none;
+}
+.hollow-knight-rpg .sheet-body {
+  overflow: hidden;
+}
+.hollow-knight-rpg .sheet-body.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.hollow-knight-rpg .sheet-body .proficiencies {
+  width: 95%;
+}
+.hollow-knight-rpg .sheet-body .skill {
+  margin-bottom: 10px;
+}
+.hollow-knight-rpg .sheet-body .skill div {
+  margin-bottom: 5px;
+}
+.hollow-knight-rpg .sheet-body .tab {
+  height: 100%;
+  overflow-y: auto;
+}
+.hollow-knight-rpg .sheet-body .tab.main .container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.hollow-knight-rpg .sheet-body .tab.main .primary-attributes {
+  min-width: 30%;
+  font-size: 1.2rem;
+  border-right: 1px black solid;
+}
+.hollow-knight-rpg .sheet-body .tab.main .primary-attributes input {
+  text-align: right;
+  width: 20%;
+}
+.hollow-knight-rpg .sheet-body .tab.main .primary-attributes .attribute-label {
+  font-weight: bold;
+  width: 45%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.hollow-knight-rpg .sheet-body .tab.main .secondary-attributes {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: 1.2rem;
+}
+.hollow-knight-rpg .sheet-body .tab.main .secondary-attributes .attribute-label {
+  font-weight: bold;
+}
+.hollow-knight-rpg .sheet-body .tab.main .secondary-attributes .align-center {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.hollow-knight-rpg .editor,
+.hollow-knight-rpg .editor-content {
+  height: 100%;
+}
+.hollow-knight-rpg .item-list {
+  list-style: none;
+  margin: 7px 0;
+  padding: 0;
+  overflow-y: auto;
+}
+.hollow-knight-rpg .item-list .item {
+  min-height: 30px;
+  line-height: 24px;
+  padding: 3px 0;
+  border-bottom: 1px solid #BBB;
+  align-items: stretch;
+}
+.hollow-knight-rpg .item-list .item img {
+  flex: 0 0 24px;
+  margin-right: 5px;
+}
+.hollow-knight-rpg .item-list .item-name {
+  margin: 0;
+}
+.hollow-knight-rpg .item-list .item-controls {
+  flex: 0 0 36px;
+}
+.hollow-knight-rpg .item-list .item-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  flex: 2;
+  justify-content: flex-start;
+}
+.hollow-knight-rpg .item-list .item-button {
+  line-height: 1;
+  font-size: 11px;
+  flex: none;
+  width: auto;
+}
+.hollow-knight-rpg .attributes {
+  position: relative;
+}
+.hollow-knight-rpg .attributes .attribute-control,
+.hollow-knight-rpg .attributes .group-control {
+  flex: 0 0 20px;
+  text-align: center;
+  line-height: 28px;
+  border: none;
+}
+.hollow-knight-rpg .attributes .attribute-roll {
+  flex: 0 0 20px;
+  text-align: center;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hollow-knight-rpg .attributes .group-prefix {
+  height: 31px;
+  margin-right: 10px;
+}
+.hollow-knight-rpg .attributes .button {
+  width: 100%;
+  flex: 1;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px groove #f0f0e0;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 28px;
+  display: block;
+}
+.hollow-knight-rpg .attributes .attribute-key {
+  background: transparent;
+  border: none;
+}
+.hollow-knight-rpg .attributes-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  align-items: center;
+  padding: 0 5px;
+  margin: 5px 0;
+  background: #cfcdc2;
+  border: 1px solid #AAA;
+  border-radius: 2px;
+  text-align: left;
+  font-weight: bold;
+}
+.hollow-knight-rpg .attributes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.hollow-knight-rpg .attributes-list li > * {
+  margin: 0 3px;
+  height: 28px;
+  line-height: 24px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #AAA;
+}
+.hollow-knight-rpg .attributes-list .attribute-col label {
+  font-size: 10px;
+  text-align: center;
+  line-height: 1;
+}
+.hollow-knight-rpg .attributes-list .attribute-col input {
+  font-size: 11px;
+  text-align: center;
+  line-height: 1;
+  height: 50%;
+}
+.hollow-knight-rpg .attribute input[type="text"]::placeholder,
+.hollow-knight-rpg .group-header input[type="text"]::placeholder {
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+.hollow-knight-rpg .attribute input[type="text"]:focus::placeholder,
+.hollow-knight-rpg .group-header input[type="text"]:focus::placeholder {
+  opacity: 1;
+}
+.hollow-knight-rpg .group-controls {
+  margin: 5px;
+}
+.hollow-knight-rpg .groups-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.hollow-knight-rpg .group {
+  margin: 5px 0 0;
+  padding: 0;
+}
+.hollow-knight-rpg .group-header {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid #AAA;
+  border-radius: 2px;
+  padding: 2px 5px;
+}
+.hollow-knight-rpg .group-key,
+.hollow-knight-rpg .group-label {
+  font-weight: bold;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  background: transparent;
+  border-radius: 0;
+  margin-right: 6px;
+}
+.hollow-knight-rpg .group-key {
+  opacity: 0.75;
+}
+.hollow-knight-rpg .group-label {
+  flex: 2;
+}
+.hollow-knight-rpg .group-dtype {
+  height: 24px;
+  flex: 0 0 116px;
+  margin: 0 5px;
+}
+.hollow-knight-rpg.sheet.actor {
+  min-width: 560px;
+  min-height: 420px;
+}
+.hollow-knight-rpg.sheet.item {
+  min-width: 460px;
+  min-height: 400px;
+}
+
+.attribute-label.rollable:hover {
+  color: #782e22;
+}
+
+.hollow-knight-rpg .item .sheet-body {
+  margin-top: 5px;
+}
+
+.m10 {
+  margin: 10px;
+}
+.my10 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.ml10 {
+  margin-left: 10px;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.horizontal-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.hidden {
+  display: none;
+}
+.divider {
+  border-top: 1px black solid;
+  width: 100%;
+}
+
+.editor {
+  min-height: 50px;
+}
+
+.path-item-list h2 {
+  white-space: nowrap;
+}
+.path-item-list .editor {
+  border: 1px #60544f80 solid;
+  border-radius: 5px;
+}
+.path-item-list .editor.prosemirror {
+  min-height: 100px;
+}
+
+/* Editable parts (like Pools value) */
+input[type="text"], input[type="number"] {
+  border: 1px transparent solid;
+  background: transparent;
+}
+input[type="text"]:hover, input[type="number"]:hover {
+  border: 1px black solid;
+  background: rgba(0, 0, 0, 0.05);
+}
+/* /End */

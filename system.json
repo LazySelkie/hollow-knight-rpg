@@ -1,0 +1,39 @@
+{
+  "id": "hollow-knight-rpg",
+  "version": "0.1.0",
+  "title": "Hollow Knight RPG (by LazySelkie)",
+  "url": "",
+  "description": "A simple implementation of Hollow Knight RPG for Foundry VTT, based on the Simple Worldbuilding System for Foundry designed by Atropos.",
+  "license": "LICENSE.txt",
+  "authors": [
+    {
+      "name": "LazySelkie",
+      "url": ""
+    }
+  ],
+  "esmodules": ["module/hk.js"],
+  "styles": ["styles/hk.css"],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }, {
+      "lang": "ru",
+      "name": "Russian",
+      "path": "lang/ru.json"
+    }
+  ],
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10"
+  },
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "pools.heart",
+  "secondaryTokenAttribute": "pools.stamina",
+  "initiative": "(@attributes.grace.value)d6",
+  "manifest": "",
+  "download": ""
+}

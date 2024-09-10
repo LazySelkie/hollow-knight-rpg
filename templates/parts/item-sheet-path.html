@@ -1,0 +1,39 @@
+<section class="path-item-list" style="height: 500px;">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+            </h1>
+            <div class="flexcol my10 align-center horizontal-row">
+                <label class="attribute-label">Rank: </label>
+                <input type="text" name="system.rank" value="{{systemData.rank}}" data-dtype="Number"/>
+            </div>
+        </div>
+    </header>
+    <section class="sheet-body">
+        <div class="my10">
+            <div class="horizontal-row">
+                <h2 class="mr10">Rank 1: {{systemData.rank1_description}}</h2>
+                <input name="system.rank1_name" type="text" value="{{systemData.rank1_name}}" placeholder="Name" />
+            </div>
+            {{editor rank1_descriptionHTML target="system.rank1_description" button=true editable=editable engine="prosemirror"}}
+        </div>
+        <div class="my10">
+            <div class="horizontal-row">
+                <h2 class="mr10">Rank 2:</h2>
+                <input name="system.rank2_name" type="text" value="{{system.rank2_name}}" placeholder="Name" />
+            </div>
+            <div class="editor-wrapper">
+                {{editor system.rank2_description target="system.rank2_description" button=true editable=editable engine="prosemirror"}}
+            </div>
+        </div>
+        <div class="my10">
+            <div class="horizontal-row">
+                <h2 class="mr10">Rank 3:</h2>
+                <input name="system.rank3_name" type="text" value="{{system.rank3_name}}" placeholder="Name" />
+            </div>
+            {{editor system.rank3_description target="system.rank3_description" button=true editable=editable engine="prosemirror"}}
+        </div>
+    </section>
+</section>

@@ -1,0 +1,38 @@
+<section class="trait-item-list">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+            </h1>
+            <div class="resource">
+                <label>Quantity</label>
+                <input type="number" name="system.quantity" value="{{systemData.quantity}}"/>
+            </div>
+            <div class="resource">
+                <label>Weight</label>
+                <input type="number" name="system.weight" value="{{systemData.weight}}"/>
+            </div>
+        </div>
+    </header>
+    <section class="sheet-body">
+        <div class="horizontal-row">
+            <!-- <div class="flexcol my10 align-center">
+                <label class="attribute-label">Cute</label>
+                <input type="text" name="system.cuteMod" value="{{systemData.cuteMod}}" data-dtype="Number"/>
+            </div>
+            <div class="flexcol my10 align-center">
+                <label class="attribute-label">Spook</label>
+                <input type="text" name="system.spookMod" value="{{systemData.spookMod}}" data-dtype="Number"/>
+            </div>
+            <div class="flexcol my10 align-center">
+                <label class="attribute-label">Hunger</label>
+                <input type="text" name="system.hunger" value="{{systemData.hunger}}" data-dtype="Number"/>
+            </div> -->
+        </div>
+
+        <div class="tab" data-group="primary" data-tab="description">
+            {{editor descriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
+        </div>
+    </section>
+</section>

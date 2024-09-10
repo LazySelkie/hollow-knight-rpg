@@ -1,0 +1,62 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+    {{#if (eq item.type "path")}}
+        {{> "systems/hollow-knight-rpg/templates/parts/item-sheet-path.html" path=item dtypes=dtypes}}
+    {{/if}}
+    {{#if (eq item.type "trait")}}
+        {{> "systems/hollow-knight-rpg/templates/parts/item-sheet-trait.html" trait=item dtypes=dtypes}}
+    {{/if}}
+    {{#if (eq item.type "charm")}}
+        {{> "systems/hollow-knight-rpg/templates/parts/item-sheet-charm.html" charm=item dtypes=dtypes}}
+    {{/if}}
+    {{#if (eq item.type "equipment")}}
+        {{> "systems/hollow-knight-rpg/templates/parts/item-sheet-equipment.html" equipment=item dtypes=dtypes}}
+    {{/if}}
+    {{#if (eq item.type "technique")}}
+        {{> "systems/hollow-knight-rpg/templates/parts/item-sheet-technique.html" technique=item dtypes=dtypes}}
+    {{/if}}
+    {{#if (eq item.type "weapon-shield")}}
+        {{> "systems/hollow-knight-rpg/templates/parts/item-sheet-weapon-shield.html" weapon_shield=item dtypes=dtypes}}
+    {{/if}}
+    {{#if (eq item.type "armor")}}
+        {{> "systems/hollow-knight-rpg/templates/parts/item-sheet-armor.html" armor=item dtypes=dtypes}}
+    {{/if}}
+    {{#if (eq item.type "item")}}
+        <header class="sheet-header">
+            <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+            <div class="header-fields">
+                <h1 class="charname">
+                    <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+                </h1>
+                <div class="resource">
+                    <label>Quantity</label>
+                    <input type="number" name="system.quantity" value="{{systemData.quantity}}"/>
+                </div>
+                <div class="resource">
+                    <label>Weight</label>
+                    <input type="number" name="system.weight" value="{{systemData.weight}}"/>
+                </div>
+            </div>
+        </header>
+
+        {{!-- Sheet Tab Navigation --}}
+        <nav class="sheet-tabs tabs" data-group="primary">
+            <a class="item" data-tab="description">Description</a>
+            <a class="item" data-tab="details">Details</a>
+            <!-- <a class="item" data-tab="attributes">Attributes</a> -->
+        </nav>
+
+        {{!-- Sheet Body --}}
+        <section class="sheet-body">
+
+            {{!-- Description Tab --}}
+            <div class="tab" data-group="primary" data-tab="description">
+                {{editor descriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
+            </div>
+
+            {{!-- Details Tab --}}
+            <div class="tab" data-group="primary" data-tab="details">
+            </div>
+
+        </section>
+    {{/if}}
+</form>

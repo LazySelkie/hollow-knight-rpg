@@ -1,0 +1,29 @@
+<section class="item-sheet trait">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+            </h1>
+            <div class="horizontal-row">
+                <div class="flexcol my10 align-center">
+                    <label class="attribute-label">Cute</label>
+                    <input type="text" name="system.cuteMod" value="{{systemData.cuteMod}}" data-dtype="Number"/>
+                </div>
+                <div class="flexcol my10 align-center">
+                    <label class="attribute-label">Spook</label>
+                    <input type="text" name="system.spookMod" value="{{systemData.spookMod}}" data-dtype="Number"/>
+                </div>
+                <div class="flexcol my10 align-center">
+                    <label class="attribute-label">Hunger</label>
+                    <input type="text" name="system.hunger" value="{{systemData.hunger}}" data-dtype="Number"/>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- <div class="divider"></div> -->
+    <section class="sheet-body main">
+        <h3>Description</h3>
+        {{editor descriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
+    </section>
+</section>

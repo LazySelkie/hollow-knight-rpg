@@ -1,0 +1,404 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+        <div class="header-fields">
+            <div class="header-top">
+                <h1 class="charname">
+                    <input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+                </h1>
+                <div class="horizontal-row my10">
+                    <label class="attribute-label mr10">{{ localize "HK.milestone" }}: </label>
+                    <input type="number" name="system.milestone.value" value="{{systemData.milestone.value}}" size="2"/>
+                </div>
+                <div>
+                    <label class="attribute-label mr10">{{ localize "HK.size" }}: </label>
+                <select class="selectsize my10" name="system.size.value"  data-type="String">
+                    {{#select actor.system.size.value}}
+                        {{#each actor.system.sizes as |size key|}}
+                        <option value="{{key}}">{{size.label}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+                </div>
+            </div>
+
+            <div class="resource">
+                <h3>{{ localize "HK.heart" }}</h3>
+                <div>
+                    <input type="number" name="system.pools.heart.value" value="{{systemData.pools.heart.value}}"/>
+                    <span> / </span>
+                    <input type="number" name="system.pools.heart.max" value="{{systemData.pools.heart.max}}"/>
+                </div>
+            </div>
+            <div class="resource">
+                <h3>{{ localize "HK.soul" }}</h3>
+                <div>
+                    <input type="number" name="system.pools.soul.value" value="{{systemData.pools.soul.value}}"/>
+                    <span> / </span>
+                    <input type="number" name="system.pools.soul.max" value="{{systemData.pools.soul.max}}"/>
+                </div>
+            </div>
+            <div class="resource">
+                <h3>{{ localize "HK.stamina" }}</h3>
+                <div>
+                    <input type="number" name="system.pools.stamina.value" value="{{systemData.pools.stamina.value}}"/>
+                    <span> / </span>
+                    <input type="number" name="system.pools.stamina.max" value="{{systemData.pools.stamina.max}}"/>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="main">{{ localize "HK.tabs.main" }}</a>
+
+        {{!-- Equipment, Weapons+Shields, Charms --}}
+        <a class="item" data-tab="inventory">{{ localize "HK.tabs.inventory" }}</a>
+
+        {{!-- Traits, Paths, Techniques --}}
+        <a class="item" data-tab="abilities">{{ localize "HK.tabs.abilities" }}</a>
+        <a class="item" data-tab="journal">{{ localize "HK.tabs.journal" }}</a>
+
+        <a class="item" data-tab="items">Items</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+
+        {{!-- Main Tab --}}
+        <div class="tab main" data-group="primary" data-tab="main">
+            <div class="container">
+                <div class="primary-attributes ml10">
+                    <div class="attribute-container horizontal-row">
+                        <label class="attribute-label mr10 rollable" data-roll="{{systemData.attributes.might.value}}d6" data-label="{{systemData.attributes.might.label}}">
+                            {{ localize "HK.might" }}
+                        </label>
+                        <input type="text" name="system.attributes.might.value" value="{{systemData.attributes.might.value}}" data-dtype="Number"/>
+                    </div>
+                    <div class="attribute-container horizontal-row">
+                        <label class="attribute-label mr10 rollable" data-roll="{{systemData.attributes.insight.value}}d6" data-label="{{systemData.attributes.insight.label}}">
+                            {{ localize "HK.insight" }}
+                        </label>
+                        <input type="text" name="system.attributes.insight.value" value="{{systemData.attributes.insight.value}}" data-dtype="Number"/>
+                    </div>
+                    <div class="attribute-container horizontal-row">
+                        <label class="attribute-label mr10 rollable" data-roll="{{systemData.attributes.shell.value}}d6" data-label="{{systemData.attributes.shell.label}}">
+                            {{ localize "HK.shell" }}
+                        </label>
+                        <input type="text" name="system.attributes.shell.value" value="{{systemData.attributes.shell.value}}" data-dtype="Number"/>
+                    </div>
+                    <div class="attribute-container horizontal-row">
+                        <label class="attribute-label mr10 rollable" data-roll="{{systemData.attributes.grace.value}}d6" data-label="{{systemData.attributes.grace.label}}">
+                            {{localize "HK.grace"}}
+                        </label>
+                        <input type="text" name="system.attributes.grace.value" value="{{systemData.attributes.grace.value}}" data-dtype="Number"/>
+                    </div>
+                </div>
+                
+                <div class="secondary-attributes">
+                    <div class="align-center">
+                        <div class="flexcol my10 align-center">
+                            <label class="attribute-label">{{ localize "HK.cute" }}</label>
+                            <input type="text" name="system.appearence.cute.value" value="{{systemData.appearence.cute.value}}" data-dtype="Number"/>
+                        </div>
+                        <div class="flexcol my10 align-center">
+                            <label class="attribute-label">{{ localize "HK.spook" }}</label>
+                            <input type="text" name="system.appearence.spook.value" value="{{systemData.appearence.spook.value}}" data-dtype="Number"/>
+                        </div>
+                        <div class="flexcol my10 align-center">
+                            <label class="attribute-label">{{ localize "HK.speed" }}</label>
+                            <div class="horizontal-row">
+                                <input type="text" name="system.movement.speed.value" value="{{systemData.movement.speed.value}}" data-dtype="Number"/>
+                                <span> / </span>
+                                <input type="text" name="system.movement.speed.max" value="{{systemData.movement.speed.max}}" data-dtype="Number"/>
+                            </div>
+                        </div>
+                        <div class="flexcol my10 align-center">
+                            <label class="attribute-label">{{ localize "HK.footwork" }}</label>
+                            <span>{{systemData.movement.footwork.value}}</span>
+                        </div>
+                        <div class="flexcol my10 align-center">
+                            <label class="attribute-label">{{ localize "HK.belly" }}</label>
+                            <div class="horizontal-row">
+                                <input type="text" name="system.belly.value" value="{{systemData.belly.value}}" data-dtype="Number"/>
+                                <span> / </span>
+                                <input type="text" name="system.belly.max" value="{{systemData.belly.max}}" data-dtype="Number"/>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {{!-- Proficiencies --}}
+                    <div class="proficiencies m10">
+                        <h3>{{ localize "HK.proficiencies" }}</h3>
+                        <i class="prof-add fa fa-plus"></i>
+                        {{#each systemData.proficiencies as |prof p_id|}}
+                        <div class="proficiency">
+                            <div class="flexcol horizontal-row">
+                                <i data-id="{{p_id}}" class="prof-toggle fa {{#if prof.expanded}}fa-arrow-down{{else}}fa-arrow-right{{/if}}" style="max-width: 20px; text-align: center;"></i>
+                                <input type="text" name="system.proficiencies.{{p_id}}.name" value="{{prof.name}}" placeholder="Proficiency name"/>
+                                <span>, {{ localize "HK.rank" }}: </span>
+                                <input type="text" name="system.proficiencies.{{p_id}}.rank" value="{{prof.rank}}" data-dtype="Number" placeholder="Rank"/>
+                                <i class="prof-delete fa fa-trash {{p_id}}" data-id="{{p_id}}" style="max-width: 20px; text-align: center;"></i>
+                            </div>
+                            {{#if prof.expanded}}
+                            <ol class="skill-list">
+                                {{#each prof.skills as |skill s_id|}}
+                                    <li class="skill">
+                                        <div class="horizontal-row">
+                                            <span>{{ localize "HK.skill" }}: </span>
+                                            <input type="text" name="system.proficiencies.{{p_id}}.skills.{{s_id}}.name" value="{{skill.name}}" data-dtype="String" placeholder="Name"/>
+                                            <input type="checkbox" name="system.proficiencies.{{p_id}}.skills.{{s_id}}.mastery" {{checked  skill.mastery}}>
+                                        </div>
+                                        <div class="horizontal-row">
+                                            <input type="text" name="system.proficiencies.{{p_id}}.skills.{{s_id}}.description" value="{{skill.description}}" data-dtype="String" placeholder="Description"/>
+                                        </div>
+                                    </li>
+                                {{/each}}
+                            </ol>
+                            {{/if}}
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {{!-- Inventory Tab: Equipment, Weapons+Shields, Charms, Armor --}}
+        <div class="tab inventory" data-group="primary" data-tab="inventory">
+
+            {{!-- Equipment --}}
+            <h3>Equipment</h3>
+            <ol class="item-list">
+                {{#each actor.equipment as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}" draggable="true">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                    <h4 class="item-name">{{item.name}}</h4>
+
+                    <div class="item-controls">
+                        <a class="item-control" title="{{ localize "HK.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                        <a class="item-control" title="{{ localize "HK.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+
+            <p>
+                <a class="item-control" title="{{ localize "HK.ItemCreate" }}" data-action="create" data-type="equipment"><i class="fas fa-plus"></i> {{ localize "HK.ItemCreate" }}</a>
+            </p>
+
+            {{!-- Weapons+Shields --}}
+            <h3>Weapons and Shields</h3>
+            <ol class="item-list">
+                {{#each actor.weapons_shields as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}" draggable="true">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                    <h4 class="item-name">{{item.name}}</h4>
+
+                    <div class="item-controls">
+                        <a class="item-control" title="{{ localize "HK.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                        <a class="item-control" title="{{ localize "HK.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+
+            <p>
+                <a class="item-control" title="{{ localize "HK.ItemCreate" }}" data-action="create" data-type="weapon-shield"><i class="fas fa-plus"></i> {{ localize "HK.ItemCreate" }}</a>
+            </p>
+
+            {{!-- Charms --}}
+            <h3>Charms</h3>
+            <ol class="item-list">
+                {{#each actor.charms as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}" draggable="true">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                    <h4 class="item-name">{{item.name}}</h4>
+
+                    <div class="item-controls">
+                        <a class="item-control" title="{{ localize "HK.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                        <a class="item-control" title="{{ localize "HK.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+
+            <p>
+                <a class="item-control" title="{{ localize "HK.ItemCreate" }}" data-action="create" data-type="charm"><i class="fas fa-plus"></i> {{ localize "HK.ItemCreate" }}</a>
+            </p>
+
+            {{!-- Armor --}}
+            <h3>Armor</h3>
+            <ol class="item-list">
+                {{#each actor.armor as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}" draggable="true">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                    <h4 class="item-name">{{item.name}}</h4>
+
+                    <div class="item-controls">
+                        <a class="item-control" title="{{ localize "HK.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                        <a class="item-control" title="{{ localize "HK.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+
+            <p>
+                <a class="item-control" title="{{ localize "HK.ItemCreate" }}" data-action="create" data-type="armor"><i class="fas fa-plus"></i> {{ localize "HK.ItemCreate" }}</a>
+            </p>
+        </div>
+
+        {{!-- Abilities Tab: Traits, Paths, Techniques --}}
+        <div class="tab abilities" data-group="primary" data-tab="abilities">
+
+            {{!-- Traits --}}
+            <h3>Traits</h3>
+            <ol class="item-list">
+                <li>
+                    <span>Modificators from Traits: </span>
+                    <span>Cute {{systemData.appearence.cute.modifier}}; </span>
+                    <span>Spook {{systemData.appearence.spook.modifier}}</span>
+                    <!-- <p>{{item.hunger}}</p> -->
+                </li>
+                {{#each actor.traits as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}" draggable="true">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                    <h4 class="item-name">{{item.name}}</h4>
+
+                    <div class="trait-info">
+                        <span>Cute {{item.system.cuteMod}}; </span>
+                        <span>Spook {{item.system.spookMod}}; </span>
+                        <span>Hunger {{item.system.hunger}}</span>
+                    </div>
+                    <div class="item-controls">
+                        <a class="item-control" title="{{ localize "HK.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                        <a class="item-control" title="{{ localize "HK.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+
+            <p>
+                <a class="item-control" title="{{ localize "HK.ItemCreate" }}" data-action="create" data-type="trait"><i class="fas fa-plus"></i> {{ localize "HK.ItemCreate" }}</a>
+            </p>
+
+            {{!-- Paths --}}
+            <h3>Paths</h3>
+            <ol class="item-list">
+                {{#each actor.paths as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}" draggable="true">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                    <h4 class="item-name">{{item.name}}</h4>
+
+                    <div class="item-controls">
+                        <a class="item-control" title="{{ localize "HK.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                        <a class="item-control" title="{{ localize "HK.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+
+            <p>
+                <a class="item-control" title="{{ localize "HK.ItemCreate" }}" data-action="create" data-type="path"><i class="fas fa-plus"></i> {{ localize "HK.ItemCreate" }}</a>
+            </p>
+
+            {{!-- Techniques --}}
+            <h3>Techniques</h3>
+            <ol class="item-list">
+                {{#each actor.techniques as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}" draggable="true">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                    <h4 class="item-name">{{item.name}}</h4>
+
+                    <div class="item-controls">
+                        <a class="item-control" title="{{ localize "HK.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                        <a class="item-control" title="{{ localize "HK.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+
+            <p>
+                <a class="item-control" title="{{ localize "HK.ItemCreate" }}" data-action="create" data-type="technique"><i class="fas fa-plus"></i> {{ localize "HK.ItemCreate" }}</a>
+            </p>
+        </div>
+
+        {{!-- Journal Tab --}}
+        <div class="tab journal" data-group="primary" data-tab="journal">
+            <div class="horizontal-row" style="height: 50%;">
+                <div class="my10" style="height: 100%;">
+                    <h2>Description</h2>
+                    {{editor descriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
+                </div>
+                <div class="my10" style="height: 100%;">
+                    <h2>Biography</h2>
+                    {{editor biographyHTML target="system.biography" button=true editable=editable engine="prosemirror"}}
+                </div>
+            </div>
+            
+            <div style="height: 50%;">
+                <h2>Notes</h2>
+                {{editor notesHTML target="system.notes" button=true editable=editable engine="prosemirror"}}
+            </div>
+        </div>
+
+
+
+        {{!-- Owned Items Tab --}}
+        <div class="tab items" data-group="primary" data-tab="items">
+            <h1>All items</h1>
+            <ol class="item-list">
+                {{#each data.items as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                    <h4 class="item-name">{{item.name}}</h4>
+                    {{!-- Iterate through all attributes on the item and output buttons for any that are formula. --}}
+                    <div class="item-buttons">
+                        {{#each item.system.attributes as |itemAttr key|}}
+                        {{#if itemAttr.dtype}}
+                            {{#if itemAttr.isFormula}}
+                                {{!-- Use the items.name.key format for shorthand. --}}
+                                {{#if ../../shorthand}}
+                                <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}" data-label="{{ itemAttr.label }}"
+                                    title="{{itemAttr.value}}">{{itemAttr.label}}</button>
+                                {{!-- Use the items.name.attributes.key.value format otherwise. --}}
+                                {{else}}
+                                <button class="item-button rollable"
+                                    data-roll="@items.{{slugify item.name}}.attributes.{{key}}.value" data-label="{{ itemAttr.label }}"
+                                    title="{{itemAttr.value}}">{{itemAttr.label}}</button>
+                                {{/if}}
+                            {{/if}}
+                        {{else}}
+                            {{#each itemAttr as |itemGroupedAttr groupedKey|}}
+                                {{#if itemGroupedAttr.isFormula}}
+                                    {{!-- Use the items.name.key format for shorthand. --}}
+                                    {{#if ../../../shorthand}}
+                                    <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}.{{groupedKey}}" data-label="{{ itemGroupedAttr.label }}"
+                                        title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
+                                    {{!-- Use the items.name.attributes.key.value format otherwise. --}}
+                                    {{else}}
+                                    <button class="item-button rollable"
+                                        data-roll="@items.{{slugify item.name}}.attributes.{{key}}.{{groupedKey}}.value" data-label="{{ itemGroupedAttr.label }}"
+                                        title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
+                                    {{/if}}
+                                {{/if}}
+                            {{/each}}
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                    <div class="item-controls">
+                        <a class="item-control" title="{{ localize "HK.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                        <a class="item-control" title="{{ localize "HK.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+            <p>
+                <a class="item-control" title="{{ localize "HK.ItemCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "HK.ItemCreate" }}</a>
+            </p>
+        </div>
+
+    </section>
+</form>
